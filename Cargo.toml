@@ -3,4 +3,26 @@ name = "zero2prod"
 version = "0.1.0"
 edition = "2021"
 
+[build-dependencies]
+syn = "1"
+
 [dependencies]
+uuid = { version = "0.8.1", features = ["v4"] }
+chrono = "0.4.15"
+config = "0.14"
+actix-web = "4"
+reqwest = "0.12.8"
+serde = { version = "1.0.210", features = ["derive"]} 
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[dependencies.sqlx]
+version = "0.5.7"
+default-features = false
+features = [
+    "runtime-actix-rustls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate"
+]
